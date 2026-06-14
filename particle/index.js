@@ -21,7 +21,7 @@ btn.addEventListener('click', () => {
 
     particle.style.top = random(0, 100) + '%';
     particle.style.left = random(0, 100) + '%';
-    particle.style.animationDuration = FADE_DURATION + 'ms';
+    particle.style.setProperty('--fade-duration', FADE_DURATION + 'ms');
 
     btn.appendChild(particle);
     particles.push(particle);
