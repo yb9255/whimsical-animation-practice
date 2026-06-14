@@ -31,6 +31,12 @@
         }
       }
 
+      @keyframes fromCenter {
+        from {
+          transform: translate(0px, 0px);
+        }
+      }
+
       .particle {
         position: absolute;
         top: 50%;
@@ -39,11 +45,24 @@
         height: 12px;
         border-radius: 50%;
         background: white;
+        transform: translate(-50%, -50%);
         animation:
           fadeOut var(--fade-duration) forwards,
           disperse 500ms;
+      }
 
-        transform: translate(-50%, -50%);
+      .particle2 {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: red;
+        pointer-events: none;
+        animation:
+          fadeOut var(--fade-duration) forwards,
+          fromCenter 500ms;
       }
     </style>
     <button class="particleButton">
