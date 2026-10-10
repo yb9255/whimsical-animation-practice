@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,10 +7,7 @@
       type="image/png"
       href="https://courses.joshwcomeau.com/favicon.rainbow.png"
     />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>“Starry Night” exercise</title>
   </head>
   <body>
@@ -19,28 +16,37 @@
         from {
           opacity: 0;
         }
+
         to {
           opacity: 1;
         }
       }
-    
-      .starLayer {
-        position: fixed;
-        z-index: -1;
-        inset: 0;
-        user-select: none;
-        pointer-events: none;
-        overflow: hidden;
-      }
+
       .star {
         position: absolute;
         animation: fadeIn 1000ms;
       }
+
+      .starLayer {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        /* top: 0; right: 0; bottom: 0; left: 0; 단축 구문
+          • 부모 요소를 자식 요소가 완전히 덮도록 만들 때 (absolute + inset: 0)
+          • 모달, 팝업, 전체 화면 오버레이, 로딩 스피너 등을 화면 전체에 꽉 차게 배치할 때 (fixed + inset: 0)
+        */
+        inset: 0;
+        /* 사용자가 웹 페이지의 텍스트나 요소를 마우스 드래그나 더블 클릭 등으로 선택(하이라이트/복사)할 수 있는지 여부를 지정합니다. */
+        user-select: none;
+        pointer-events: none;
+        overflow: hidden;
+      }
     </style>
-    
+
+    <div class="starLayer" aria-hidden="true"></div>
     <button class="particleButton">Add Stars</button>
 
     <script type="module" src="/src/index.js"></script>
   </body>
 </html>
-  

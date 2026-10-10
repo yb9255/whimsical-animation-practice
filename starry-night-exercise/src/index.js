@@ -3,22 +3,17 @@ import './reset.css';
 import './styles.css';
 
 const btn = document.querySelector('.particleButton');
-const FADE_IN_DURATION = 1000;
+const starLayer = document.querySelector('.starLayer');
 
 btn.addEventListener('click', () => {
-  // TODO: Generate stars on click!
-  // Here’s the emoji to use: ⭐
-
   range(10).forEach(() => {
-    const star = document.createElement('div');
-    star.classList.add('star');
-    star.innerText = '⭐';
+    const particle = document.createElement('span');
+    particle.innerHTML = '⭐';
+    particle.classList.add('star');
+    particle.style.top = random(0, 100) + '%';
+    particle.style.left = random(0, 100) + '%';
 
-    star.style.top = random(0, 100) + '%';
-    star.style.left = random(0, 100) + '%';
-    star.style.animationDuration = FADE_IN_DURATION + 'ms';
-
-    document.body.appendChild(star);
+    starLayer.appendChild(particle);
   });
 });
 
