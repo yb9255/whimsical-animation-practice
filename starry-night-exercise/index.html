@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://courses.joshwcomeau.com/favicon.rainbow.png"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>“Starry Night” exercise</title>
+  </head>
+  <body>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    
+      .starLayer {
+        position: fixed;
+        z-index: -1;
+        inset: 0;
+        user-select: none;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .star {
+        position: absolute;
+        animation: fadeIn 1000ms;
+      }
+    </style>
+    
+    <button class="particleButton">Add Stars</button>
+
+    <script type="module" src="/src/index.js"></script>
+  </body>
+</html>
+  
